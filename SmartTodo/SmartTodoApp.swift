@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct SmartTodoApp: App {
-    let persistenceController = PersistenceController.shared
+    let persistenceController = SmartTodoPersistence.shared
 
     var body: some Scene {
         WindowGroup {
