@@ -24,7 +24,6 @@ struct SmartTodoPersistence {
             byAdding: .day, value: 2, to: Date())
         task1.isCompleted = false
         task1.recurrence = "None"
-        task1.priority = 2
         task1.syncedWithAPI = false
         task1.createdAt = Date()
 
@@ -36,49 +35,9 @@ struct SmartTodoPersistence {
             byAdding: .day, value: 1, to: Date())
         task2.isCompleted = false
         task2.recurrence = "Daily"
-        task2.priority = 1
         task2.syncedWithAPI = true
         task2.createdAt = Date()
 
-        // Sample Habits
-        let habit1 = Habit(context: viewContext)
-        habit1.id = UUID()
-        habit1.name = "Morning Workout"
-        habit1.frequency = "Daily"
-        habit1.streak = 5
-        habit1.lastCompleted =
-            (Calendar.current.date(
-                byAdding: .day, value: -1, to: Date()) != nil)
-        habit1.reminderTime = Calendar.current.date(
-            bySettingHour: 7, minute: 0, second: 0, of: Date())
-        habit1.notificationsEnabled = true
-        habit1.createdAt = Date()
-
-        let habit2 = Habit(context: viewContext)
-        habit2.id = UUID()
-        habit2.name = "Meditation"
-        habit2.frequency = "Daily"
-        habit2.streak = 10
-        habit2.lastCompleted =
-            (Calendar.current.date(
-                byAdding: .day, value: -1, to: Date()) != nil)
-        habit2.reminderTime = Calendar.current.date(
-            bySettingHour: 8, minute: 30, second: 0, of: Date())
-        habit2.notificationsEnabled = true
-        habit2.createdAt = Date()
-
-        // Sample History (Completed Tasks/Habits)
-        let history1 = History(context: viewContext)
-        history1.id = UUID()
-        history1.taskId = task1.id
-        history1.completionDate = Calendar.current.date(
-            byAdding: .day, value: -2, to: Date())!
-
-        let history2 = History(context: viewContext)
-        history2.id = UUID()
-        history2.habitId = habit1.id
-        history2.completionDate = Calendar.current.date(
-            byAdding: .day, value: -1, to: Date())!
 
         // Save Context
         do {

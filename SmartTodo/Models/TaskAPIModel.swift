@@ -8,10 +8,12 @@
 
 import Foundation
 
-struct TaskAPIModel: Codable, Identifiable {
-    let id: String
+struct TaskAPIModel {
+    let id: UUID
     let title: String
-    let dueDate: String?
+    let notes: String?
+    let dueDate: Date?
     let isCompleted: Bool
-    let recurrence: String?
+    let syncedWithAPI: Bool
+    let createdAt: Date
 }

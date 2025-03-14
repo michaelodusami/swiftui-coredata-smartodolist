@@ -8,38 +8,22 @@
 import SwiftUI
 import CoreData
 
+/**
+ NEW TASK RECREATING GOOGLE TASKS
+ */
+
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
 
     var body: some View {
         TabView {
-            /**
-             Displays a list of tasks.
-             Supports completion, deletion, and syncing.
-             */
+
             Tab("Tasks", systemImage: "checkmark.circle.fill")
             {
-                Text("Hello, world")
+                TasksMainView()
             }
             
-            /**
-             Tracks habit streaks.
-             Sends reminders for daily habits.
-             */
-            Tab("Habits", systemImage: "flame.fill")
-            {
-                Text("Hello, world")
-            }
-            
-            /**
-             Settings Tab (SettingsView.swift)
-             Manages API integration and notifications.
-             */
-            Tab("Settings", systemImage: "gearshape.fill")
-            {
-                Settings()
-            }
         }
         
     }
